@@ -1,0 +1,178 @@
+/* 
+Desarrollador: Mauricio Almuna.
+Aplicacion: Sistema para estados de maquinaria.
+Fecha: 15-01-2024. 
+*/
+
+
+/* Estilos generales */
+body{
+    background-color: #e4e4e4;
+
+}
+
+/* **** Estilos Menu Bar **** */
+.menubar-custom{
+    height: 50px;
+    background-color: #4980cc;
+
+}
+
+.custom-icon{
+    height: 29px;
+    width: 29px;
+    
+}
+
+.custom-svg{
+    height: 40px;
+    
+}
+
+.separador{
+    height: 80px;
+}
+
+.rounded {
+    border-radius: 50%!important;
+    background-color: #ffffff;
+    height:2.4rem;
+    width:2.4rem;
+
+}
+
+.input-group-text{
+    background-color: #ffffff;
+    color: #3d3c3c;
+    -webkit-text-stroke: 1px;
+}
+
+
+/* **** Estilos Card **** */
+.custom-card{
+    background-color: #ffffff;
+    border: 1px solid #e4e4e4;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    height: 80px;
+    margin-bottom: -1px;
+    cursor: pointer;
+    box-shadow: #3d3c3c;
+    
+}
+
+.txt-id{
+    color: #8a8888;
+
+}
+
+.txt-descripcion{
+    color: #3d3c3c;
+}
+
+.circle-state-red{
+    border-radius: 50%!important;
+    background-color: #e13e5b;
+    height:22px;
+    width:22px;
+
+}
+
+.circle-state-green{
+    border-radius: 50%!important;
+    background-color: #278e06;
+    height:22px;
+    width:22px;
+
+}
+
+
+
+/* **** Estilos Seccion "Informacion de maquina" **** */
+
+/* **** Card detalle **** */
+
+.cabecera{
+    background-color: #e4e4e4;
+
+}
+
+
+/* Indicadores */
+.indicador{
+    width: 33%; 
+    margin-right: 4px;
+
+}
+
+.bg-100{
+    background-color: #008000 !important;
+    color: #ffffff !important;
+}
+
+.bg-50{
+
+    background-color: #FFFF00 !important;
+    color: #3d3c3c !important;
+}
+
+.bg-35{
+
+    background-color: #FFA500 !important;
+    color: #3d3c3c !important;
+}
+
+.bg-20{
+
+    background-color: #FF0000 !important;
+    color: #ffffff !important;
+}
+
+.bg-10{
+
+    background-color: #8B0000 !important;
+    color: #ffffff !important;
+}
+
+.bg-0{
+
+    background-color: #8B0000 !important;
+    color: #ffffff !important;
+}
+
+.bg-default{
+
+    background-color: #ffffff;
+    color: #3d3c3c;
+}
+
+.txt-indicador{
+    font-size: 12px;
+}
+
+
+/* Datos detalle maquinas */
+
+.color-empresa{
+    color: #4980cc;
+}
+
+.color-id{
+    color: #8a8888;
+}
+
+.circulo-estado-activo{
+    border-radius: 50%!important;
+    background-color: #278e06;
+    height:17px;
+    width:17px;
+
+}
+
+.circulo-estado-inactivo{
+    border-radius: 50%!important;
+    background-color: #e13e5b;
+    height:17px;
+    width:17px;
+
+}

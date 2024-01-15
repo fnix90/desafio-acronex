@@ -1,0 +1,182 @@
+<!doctype html>
+
+<!-- 
+Desarrollador: Mauricio Almuna.
+Aplicacion: Sistema para estados de maquinaria.
+Fecha: 15-01-2024. 
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unimap</title>
+    <link rel="shortcut icon" href="Assets/img/logo35x35.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="Css/estilos.css">
+</head>
+  <body>
+    
+    <div class="container-fluid">
+
+        <!-- MENU BAR -->
+        <div class="row menubar-custom align-items-center mb-md-4 fixed-top">
+                
+            <div class="col-md-3 col-lg-2 ps-md-5">  
+                <img class="custom-icon" src="Assets/img/logo35x35.png" alt="Acronex">
+                <img class="custom-svg" src="Assets/img/unimap_blanco.svg" alt="Acronex">
+            </div>
+
+            <div class="col-md-6 col-lg-8">
+                <div class="input-group">        
+                    <input onkeyup="filtraCards()" type="text" id="search" class="form-control" placeholder="Buscar maquina">
+                    <i class="input-group-text bi bi-search" id="search-machine"></i>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-lg-2 d-flex justify-content-end pe-4">
+                <div class="rounded d-flex justify-content-center align-items-center">
+                    <p class="m-0 ">NN</p>    
+                </div>
+            </div>
+        
+        </div>
+
+        <div style="height: 70px;"></div>
+        
+        <!-- Detalle maquina -->
+        <section class="row justify-content-center d-none" id="detalle">
+            <section class="col-md-10 col-lg-8 bg-light">
+                
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-between border-bottom ps-4 pe-4 pt-2 pb-2" id="head-ficha">
+                        <!-- description - id -->
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <!-- info general -->
+                    <div class="col ps-4">
+                        
+                        <div class="row row-cols-2 g-1 mb-4" id="padre-indicador">
+                            
+                        </div>    
+                      
+                        <div class="row">
+                            <div class="col-12" id="datos-empresa">
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-12" id="datos-clase">
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <p class="m-0 fw-bolder">Estado</p>
+                                <div class="col-12 d-flex align-items-center" id="datos-estado">
+                                </div>    
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-12" id="datos-fecha">
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- info cards -->
+                    <div class="col-md-7 col-lg-7 p-2">
+
+                        <!-- TABLA INFORMACION -->
+                        <div class="row justify-content-end pe-4 mb-3">
+                            <div class="col-md-12 col-lg-9 border">
+                                <!-- cabecera -->
+                                <div class="row cabecera">
+                                    <div class="col-12 d-flex justify-content-center pt-1 pb-1">
+                                        <p class="m-0 fs-6 fw-bolder">General</p>
+                                    </div>
+                                </div>                                
+                                <!-- cuerpo -->
+                                <div class="row">
+                                    <div class="col-6 text-end pe-5 pt-2 pb-3">
+                                        <p class="m-0 fs-6">Cosechando</p>
+                                        <p class="m-0 fs-6">Bateria interna</p>
+                                        <p class="m-0 fs-6">Bateria vehiculo</p>
+                                        <p class="m-0 fs-6">Uso combustible</p>
+                                    </div>
+                                    <div class="col-6 text-start ps-4 pt-2 pb-3" id="id-general">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-end pe-4 mb-3">
+                            <div class="col-md-12 col-lg-9 border">
+                                <!-- cabecera -->
+                                <div class="row cabecera">
+                                    <div class="col-12 d-flex justify-content-center pt-1 pb-1">
+                                        <p class="m-0 fs-6 fw-bolder">Clima</p>
+                                    </div>
+                                </div>                                
+                                <!-- cuerpo -->
+                                <div class="row">
+                                    <div class="col-6 text-end pe-5 pt-2 pb-3">
+                                        <p class="m-0 fs-6">Temperatura</p>
+                                        <p class="m-0 fs-6">Humedad</p>
+                                        <p class="m-0 fs-6">Direccion del viento</p>
+                                        <p class="m-0 fs-6">Velocidad del viento</p>
+                                    </div>
+                                    <div class="col-6 text-start ps-4 pt-2 pb-3" id="id-clima">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-end pe-4 mb-5">
+                            <div class="col-md-12 col-lg-9 border">
+                                <!-- cabecera -->
+                                <div class="row cabecera">
+                                    <div class="col-12 d-flex justify-content-center pt-1 pb-1">
+                                        <p class="m-0 fs-6 fw-bolder">Operacion</p>
+                                    </div>
+                                </div>                                
+                                <!-- cuerpo -->
+                                <div class="row">
+                                    <div class="col-6 text-end pe-5 pt-2 pb-3">
+                                        <p class="m-0 fs-6">Velocidad</p>
+                                        <p class="m-0 fs-6">Presion</p>
+                                        <p class="m-0 fs-6">Producto / hectárea</p>
+                                        <p class="m-0 fs-6">Ancho</p>
+                                    </div>
+                                    <div class="col-6 text-start ps-4 pt-2 pb-3" id="id-operacion">           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+
+                </div>
+    
+            </section>
+        </section>
+
+        <!-- CARD -->
+        <div class="row justify-content-center exp" id="card-element">
+                  
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="Js/main.js"></script>
+    
+</body>
+</html>
